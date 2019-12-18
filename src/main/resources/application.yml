@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: employee-management-swagger-integration
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      
+  #Database Connection Properties  
+  datasource: #Database Connection Properties
+    url: jdbc:mysql://localhost:3306/employee_directory?useSSL=false&serverTimeZone=UTC
+    username: hbstudent
+    password: hbstudent
+    
+server:
+  port: 9000
+  
+#Database Queries 
+
+#Get All Employees Query
+dbQuery:
+  getAllEmployees : SELECT employeeID, firstName, lastName, emailID FROM employee_directory.employee
+  getEmployeeByID : SELECT employeeID, firstName, lastName, emailID FROM employee_directory.employee WHERE employeeID = ?
+  createEmployee : INSERT INTO employee_directory.employee (firstName, lastName, emailID) VALUES (?, ?, ?)
+  
+ 
+ 
+  
+    
+  
